@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+#↑ここで使う関数やオブジェクトを使えるようにする物
+import hello.views as hello
+#↑hello/にアクセス
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('hello/',hello.index),
+    #path(アクセスするアドレス,呼び出す処理)
 ]
