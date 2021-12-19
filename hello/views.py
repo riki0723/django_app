@@ -3,8 +3,8 @@ from django.http import HttpResponse
 # HttpResponseというクラスをimportする。
 
 
-def index(request,id,nickname):
-    result = 'your id: ' + str(id) + ', name:"' + nickname + '".'
+def index(request,nickname, age):
+    result = 'your account: ' + nickname + '"(' + str(age) + ').'
     return HttpResponse(result)
 #importされたクラスを実行する処理の内容
 #def index(request): index関数を定義しますよという意味
