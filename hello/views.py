@@ -1,7 +1,23 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.generic import TemplateView
 from .forms import HelloForm
 # HttpResponseというクラスをimportする。
+
+class HelloView(TemplateView):
+
+    def __init__(self):
+        self.params = {
+            'title':'Hello',
+            'msg':'your data:',
+            'form': HelloForm()
+        }
+
+def get(self, request):
+    return render(request, 'hello/index.html',self.params)
+
+def post(self, request):
+    msg = ''
 
 
 def index(request):
